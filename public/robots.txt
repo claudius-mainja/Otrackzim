@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.otrack.co.zw/sitemap.xml
+
+# Disallow admin paths
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl rules
+Crawl-Delay: 10
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+Crawl-Delay: 5
+
+User-agent: Googlebot-Image
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
