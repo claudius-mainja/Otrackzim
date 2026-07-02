@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 export default function PrivacyPolicy() {
   return (
     <div className="relative pt-32 pb-24 bg-slate-100">
+      <Seo
+        title="Privacy Policy"
+        description="O'Track Global Privacy Policy - Learn how we collect, use, and protect your personal information and vehicle data in compliance with Zimbabwe data protection laws and GDPR principles."
+        keywords="O'Track Global privacy policy, data protection Zimbabwe, vehicle tracking privacy, GPS tracking data policy, Zimbabwe data privacy"
+        path="/privacy-policy"
+      />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Privacy Policy</h1>

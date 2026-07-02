@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 export default function TermsOfUse() {
   return (
     <div className="relative pt-32 pb-24 bg-slate-100">
+      <Seo
+        title="Terms of Use"
+        description="O'Track Global Terms of Use - Guidelines for using our website, mobile applications, and online fleet management platform."
+        keywords="O'Track Global terms of use, website terms Zimbabwe, fleet management platform terms, GPS tracking website terms"
+        path="/terms-of-use"
+      />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Terms of Use</h1>

@@ -5,6 +5,7 @@ import { TbRadar } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import WhatsAppSection from "../components/WhatsAppSection";
 import TelematicsParticles from "../components/TelematicsParticles";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -48,6 +49,13 @@ const cardHover = {
 export default function About() {
   return (
     <div className="relative pt-24">
+      <Seo
+        title="About Us"
+        description="Learn about O'Track Global - Zimbabwe's leading vehicle telematics and fleet management company. 15+ years of expertise in GPS tracking, fuel monitoring, and fleet security across Southern Africa."
+        keywords="about O'Track Global, vehicle tracking company Zimbabwe, fleet management company Zimbabwe, telematics company Zimbabwe, GPS tracking company, O'Track Global team"
+        path="/about"
+        ogType="article"
+      />
       <HeroBanner />
       <WhoWeAre />
       <FeatureSection />

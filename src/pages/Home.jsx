@@ -16,6 +16,7 @@ import { TbRadar, TbCamera } from "react-icons/tb";
 import { RiPoliceCarLine, RiFingerprint2Line, RiCarLine } from "react-icons/ri";
 import WhatsAppSection from "../components/WhatsAppSection";
 import TelematicsParticles from "../components/TelematicsParticles";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -41,6 +42,12 @@ const staggerItem = {
 export default function Home() {
   return (
     <div className="relative">
+      <Seo
+        title="Home"
+        description="O'Track Global - Zimbabwe's premier vehicle tracking and fleet management solutions provider. GPS tracking, fuel monitoring, telematics, and security systems for businesses across Southern Africa."
+        keywords="vehicle tracking Zimbabwe, fleet management Zimbabwe, GPS tracking Zimbabwe, telematics solutions, vehicle monitoring Zimbabwe, fleet tracking Zimbabwe, O'Track Global, vehicle security Zimbabwe"
+        path="/"
+      />
       <HeroSection />
       <TrustBar />
       <AboutSection />
@@ -63,7 +70,7 @@ function HeroSection() {
           alt=""
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/85" />
       </div>
       <div className="absolute inset-0 z-[1]">
         <TelematicsParticles />

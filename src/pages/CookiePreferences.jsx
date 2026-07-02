@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiSettings, FiShield, FiBarChart2 } from "react-icons/fi";
+import Seo from "../components/Seo";
 
 const cookieTypes = [
   {
@@ -26,6 +27,12 @@ const cookieTypes = [
 export default function CookiePreferences() {
   return (
     <div className="relative pt-32 pb-24 bg-slate-100">
+      <Seo
+        title="Cookie Preferences"
+        description="Manage your cookie preferences for O'Track Global's website. Learn about essential, analytics, and functional cookies we use to enhance your browsing experience."
+        keywords="O'Track Global cookies, cookie preferences Zimbabwe, website cookies Zimbabwe, privacy settings Zimbabwe"
+        path="/cookie-preferences"
+      />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Cookie Preferences</h1>

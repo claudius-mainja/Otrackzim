@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 export default function TermsConditions() {
   return (
     <div className="relative pt-32 pb-24 bg-slate-100">
+      <Seo
+        title="Terms & Conditions"
+        description="O'Track Global Terms & Conditions - Read the terms governing the use of our vehicle tracking and fleet management services across Zimbabwe and Southern Africa."
+        keywords="O'Track Global terms, vehicle tracking terms Zimbabwe, fleet management terms, GPS tracking service agreement Zimbabwe"
+        path="/terms-conditions"
+      />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Terms & Conditions</h1>

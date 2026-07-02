@@ -3,7 +3,6 @@ import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppChat from "./components/WhatsAppChat";
-import TelematicsParticles from "./components/TelematicsParticles";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsent from "./components/CookieConsent";
 
@@ -31,7 +30,6 @@ function Loading() {
 export default function App() {
   return (
     <div className="relative min-h-screen">
-      <TelematicsParticles />
       <ScrollToTop />
       <Navbar />
       <main className="relative z-10">

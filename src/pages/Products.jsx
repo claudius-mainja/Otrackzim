@@ -7,6 +7,7 @@ import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import WhatsAppSection from "../components/WhatsAppSection";
 import TelematicsParticles from "../components/TelematicsParticles";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -92,6 +93,12 @@ const floatingIcons = [FiTarget, FiGlobe, FiMonitor, FiShield, RiRadarLine, IoSh
 export default function Products() {
   return (
     <div className="relative pt-24">
+      <Seo
+        title="Products & Solutions"
+        description="Explore O'Track Global's comprehensive range of vehicle tracking and fleet management solutions. GPS vehicle tracking, fuel monitoring, security alarms, speed limiters, MDVR cameras, panic buttons, and driver identification systems."
+        keywords="vehicle tracking products Zimbabwe, fleet management solutions Zimbabwe, GPS tracking devices Zimbabwe, fuel monitoring system, speed limiter Zimbabwe, MDVR camera, panic button Zimbabwe, driver identification system"
+        path="/products"
+      />
       <HeroBanner />
       <FeaturedSolution />
       <FeatureSection />

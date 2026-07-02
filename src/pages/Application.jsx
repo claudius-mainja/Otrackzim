@@ -6,6 +6,7 @@ import { TbDeviceMobile, TbRadar } from "react-icons/tb";
 import { BsGraphUpArrow } from "react-icons/bs";
 import Logo3D from "../components/Logo3D";
 import WhatsAppSection from "../components/WhatsAppSection";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -31,6 +32,12 @@ const staggerItem = {
 export default function Application() {
   return (
     <div className="relative pt-24">
+      <Seo
+        title="Mobile App"
+        description="Download the O'Track Global mobile app for real-time fleet management. GPS tracking, instant alerts, fuel analytics, and vehicle security controls on iOS and Android."
+        keywords="O'Track Global app, fleet management app Zimbabwe, GPS tracking app, vehicle tracking mobile app, download O'Track app, fleet management mobile Zimbabwe"
+        path="/application"
+      />
       <HeroSection />
       <FeaturesSection />
       <DownloadSection />
