@@ -15,7 +15,7 @@ export default function TermsConditions() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Terms & Conditions</h1>
           <p className="text-gray-600 mb-8">Last updated: January 2026</p>
 
-          <div className="space-y-6 text-otrack-gray font-light">
+          <div className="space-y-6 text-gray-700">
             <Section title="1. Acceptance of Terms">
               By accessing or using the O'Track Global website, products, and services, you agree to be bound by these Terms & Conditions. If you do not agree to all terms, please do not use our services.
             </Section>
@@ -96,7 +96,7 @@ export default function TermsConditions() {
 
 function Section({ title, children }) {
   return (
-    <div className="border-b border-white/5 pb-6 last:border-0">
+    <div className="border-b border-gray-200 pb-6 last:border-0">
       <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-3">{title}</h2>
       <div className="text-sm leading-relaxed">{children}</div>
     </div>

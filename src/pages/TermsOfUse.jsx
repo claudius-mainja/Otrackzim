@@ -15,7 +15,7 @@ export default function TermsOfUse() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Terms of Use</h1>
           <p className="text-gray-600 mb-8">Last updated: January 2026</p>
 
-          <div className="space-y-6 text-otrack-gray font-light">
+          <div className="space-y-6 text-gray-700">
             <Section title="1. Website Use">
               This website is provided for informational and commercial purposes related to O'Track Global's vehicle telematics and fleet management services. By accessing this website, you agree to these Terms of Use.
             </Section>
@@ -81,7 +81,7 @@ export default function TermsOfUse() {
 
 function Section({ title, children }) {
   return (
-    <div className="border-b border-white/5 pb-6 last:border-0">
+    <div className="border-b border-gray-200 pb-6 last:border-0">
       <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-3">{title}</h2>
       <div className="text-sm leading-relaxed">{children}</div>
     </div>

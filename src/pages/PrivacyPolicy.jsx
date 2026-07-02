@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Privacy Policy</h1>
           <p className="text-gray-600 mb-8">Last updated: January 2026</p>
 
-          <div className="max-w-none space-y-6 text-otrack-gray font-light">
+          <div className="max-w-none space-y-6 text-gray-700">
             <Section title="1. Introduction">
               O'Track Global ("we," "our," or "us") is committed to protecting the privacy of our clients, partners, and website visitors. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </Section>
@@ -145,7 +145,7 @@ export default function PrivacyPolicy() {
 
 function Section({ title, children }) {
   return (
-    <div className="border-b border-white/5 pb-6 last:border-0">
+    <div className="border-b border-gray-200 pb-6 last:border-0">
       <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-3">{title}</h2>
       <div className="text-sm leading-relaxed space-y-2 text-gray-600">{children}</div>
     </div>

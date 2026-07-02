@@ -38,27 +38,27 @@ export default function CookiePreferences() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Cookie Preferences</h1>
           <p className="text-gray-600 mb-8">Last updated: January 2026</p>
 
-          <div className="space-y-6 text-otrack-gray font-light">
+          <div className="space-y-6 text-gray-700">
             <Section>
               Cookies are small text files stored on your device when you visit our website. They help us provide you with a better browsing experience and understand how our website is used. You can manage your preferences below.
             </Section>
 
             <Section>
-              <h2 className="text-xl font-extrabold text-white uppercase mb-4">Manage Cookie Preferences</h2>
+              <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-4">Manage Cookie Preferences</h2>
               <div className="space-y-4">
                 {cookieTypes.map((cookie, i) => (
-                  <div key={i} className="glass-card backdrop-blur-md p-6">
+                  <div key={i} className="glass-card backdrop-blur-md p-6 border-gray-200">
                     <div className="flex items-start justify-between">
                       <div className="flex items-start gap-4">
                         <div className="w-10 h-10 rounded-lg bg-otrack-primary/10 flex items-center justify-center shrink-0">
                           <cookie.icon className="w-5 h-5 text-otrack-primary" />
                         </div>
                         <div>
-                          <h3 className="text-white font-semibold uppercase">{cookie.title}</h3>
-                          <p className="text-sm text-otrack-gray mt-1">{cookie.desc}</p>
+                          <h3 className="text-gray-900 font-semibold uppercase">{cookie.title}</h3>
+                          <p className="text-sm text-gray-600 mt-1">{cookie.desc}</p>
                           <ul className="flex flex-wrap gap-2 mt-3">
                             {cookie.examples.map((ex, j) => (
-                              <li key={j} className="text-xs px-2 py-1 rounded-full bg-white/5 text-otrack-gray">
+                              <li key={j} className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">
                                 {ex}
                               </li>
                             ))}
@@ -70,7 +70,7 @@ export default function CookiePreferences() {
                       ) : (
                         <label className="relative inline-flex items-center cursor-pointer shrink-0">
                           <input type="checkbox" defaultChecked className="sr-only peer" />
-                          <div className="w-11 h-6 bg-white/10 rounded-full peer peer-checked:bg-otrack-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full" />
+                          <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-otrack-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full" />
                         </label>
                       )}
                     </div>
@@ -124,7 +124,7 @@ export default function CookiePreferences() {
               <button className="px-6 py-3 bg-gradient-to-r from-otrack-primary to-otrack-secondary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-otrack-primary/25 transition-all">
                 Save Preferences
               </button>
-              <button className="px-6 py-3 glass-card backdrop-blur-md text-white font-semibold rounded-lg hover:border-otrack-primary/30 hover:shadow-sm transition-all">
+              <button className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-otrack-primary/30 hover:shadow-sm transition-all">
                 Accept All
               </button>
             </div>
@@ -137,7 +137,7 @@ export default function CookiePreferences() {
 
 function Section({ title, children }) {
   return (
-    <div className="border-b border-white/5 pb-6 last:border-0">
+    <div className="border-b border-gray-200 pb-6 last:border-0">
       {title && <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-3">{title}</h2>}
       <div className="text-sm leading-relaxed">{children}</div>
     </div>
