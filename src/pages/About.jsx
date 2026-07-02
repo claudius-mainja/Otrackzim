@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiShield, FiEye, FiLock, FiCpu } from "react-icons/fi";
+import { FiArrowRight, FiShield, FiEye, FiLock, FiCpu, FiUsers, FiTool, FiHeadphones, FiBarChart2 } from "react-icons/fi";
 import { BsGlobe2 } from "react-icons/bs";
 import { TbRadar } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import WhatsAppSection from "../components/WhatsAppSection";
+import TelematicsParticles from "../components/TelematicsParticles";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -49,6 +50,7 @@ export default function About() {
     <div className="relative pt-24">
       <HeroBanner />
       <WhoWeAre />
+      <FeatureSection />
       <MissionSection />
       <CoreValues />
       <TechInnovation />
@@ -60,25 +62,24 @@ export default function About() {
 
 function HeroBanner() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#F68C2A] to-[#FF6B00]">
-      <div className="absolute inset-0 grid-pattern opacity-10" />
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/3 w-48 h-48 bg-white/5 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96">
-        <div className="absolute inset-0 rounded-full border border-white/20 animate-radar-ping" />
-        <div className="absolute inset-8 rounded-full border border-white/20 animate-radar-ping" style={{ animationDelay: "1s" }} />
-        <div className="absolute inset-16 rounded-full border border-white/20 animate-radar-ping" style={{ animationDelay: "2s" }} />
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src="/assets/images/original/heroabout.png" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/85 to-otrack-secondary/85" />
+      </div>
+      <div className="absolute inset-0 z-[1]">
+        <TelematicsParticles />
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm mb-6">
             <TbRadar className="w-4 h-4" />
-            <span className="font-semibold italic">About O'Track Global</span>
+            <span className="font-semibold">About O'Track Global</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
             Driving Innovation in <span className="text-white/80">Vehicle Telematics</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light italic">
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light">
             Leading the way in vehicle telematics and fleet management solutions across Southern Africa
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
@@ -108,7 +109,7 @@ function WhoWeAre() {
             </div>
           </motion.div>
           <motion.div {...fadeLeft}>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-50 border border-[#F68C2A]/20 text-[#F68C2A] text-sm mb-4 font-semibold italic">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-50 border border-[#F68C2A]/20 text-[#F68C2A] text-sm mb-4 font-semibold">
               Who We Are
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-gray-900 mt-4 mb-6">
@@ -127,6 +128,49 @@ function WhoWeAre() {
   );
 }
 
+function FeatureSection() {
+  const features = [
+    { icon: FiUsers, title: "Expert Team", desc: "Skilled professionals with deep industry knowledge dedicated to your fleet success." },
+    { icon: FiTool, title: "Advanced Technology", desc: "State-of-the-art GPS and telematics systems for precise vehicle tracking and data analytics." },
+    { icon: FiHeadphones, title: "24/7 Support", desc: "Round-the-clock technical assistance and customer service whenever you need it." },
+    { icon: FiBarChart2, title: "Data-Driven Insights", desc: "Comprehensive reporting and analytics to optimize fleet performance and reduce costs." },
+  ];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div className="text-center mb-16" {...fadeUp}>
+          <div className="w-16 h-0.5 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] mx-auto mb-4" />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-gray-900">Why Choose O'Track Global</h2>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto font-light">We deliver value through expertise, innovation, and unwavering commitment to our clients</p>
+        </motion.div>
+        <motion.div
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              variants={staggerItem}
+              whileHover={{ y: -5, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+              className="bg-white rounded-xl p-6 border border-gray-100 shadow-lg hover:shadow-xl hover:shadow-[#F68C2A]/10 hover:border-[#F68C2A]/20 transition-all duration-300 group text-center"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F68C2A] to-[#FF6B00] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <f.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight mb-2">{f.title}</h3>
+              <p className="text-sm text-gray-600 font-light">{f.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function MissionSection() {
   return (
     <section className="py-24 bg-otrack-dark">
@@ -134,7 +178,7 @@ function MissionSection() {
         <motion.div className="text-center mb-16" {...fadeUp}>
           <div className="w-16 h-0.5 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] mx-auto mb-4" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white">Our Mission & Vision</h2>
-          <p className="text-gray-400 mt-4 font-light italic">Guiding principles that drive our commitment to excellence</p>
+          <p className="text-gray-400 mt-4 font-light">Guiding principles that drive our commitment to excellence</p>
         </motion.div>
         <motion.div
           variants={staggerContainer}
@@ -194,7 +238,7 @@ function CoreValues() {
         <motion.div className="text-center mb-16" {...fadeUp}>
           <div className="w-16 h-0.5 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] mx-auto mb-4" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-gray-900">Our Core Values</h2>
-          <p className="text-gray-500 mt-4 font-light italic">The principles that guide everything we do</p>
+          <p className="text-gray-500 mt-4 font-light">The principles that guide everything we do</p>
         </motion.div>
         <motion.div
           variants={staggerContainer}
@@ -246,7 +290,7 @@ function TechInnovation() {
             </div>
           </motion.div>
           <motion.div {...fadeLeft}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F68C2A]/10 border border-[#F68C2A]/20 text-[#F68C2A] text-sm mb-4 font-semibold italic">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F68C2A]/10 border border-[#F68C2A]/20 text-[#F68C2A] text-sm mb-4 font-semibold">
               <FiCpu className="w-4 h-4" />
               Technology & Innovation
             </div>

@@ -25,11 +25,11 @@ const cookieTypes = [
 
 export default function CookiePreferences() {
   return (
-    <div className="relative pt-32 pb-24 bg-gradient-to-br from-otrack-primary to-otrack-secondary">
+    <div className="relative pt-32 pb-24 bg-slate-100">
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4 uppercase tracking-tight">Cookie Preferences</h1>
-          <p className="text-otrack-gray mb-8 italic">Last updated: January 2026</p>
+          <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Cookie Preferences</h1>
+          <p className="text-gray-600 mb-8">Last updated: January 2026</p>
 
           <div className="space-y-6 text-otrack-gray font-light">
             <Section>
@@ -131,7 +131,7 @@ export default function CookiePreferences() {
 function Section({ title, children }) {
   return (
     <div className="border-b border-white/5 pb-6 last:border-0">
-      {title && <h2 className="text-xl font-extrabold text-white uppercase mb-3">{title}</h2>}
+      {title && <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-3">{title}</h2>}
       <div className="text-sm leading-relaxed">{children}</div>
     </div>
   );

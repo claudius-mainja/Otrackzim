@@ -43,16 +43,16 @@ export default function Application() {
 
 function HeroSection() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#F68C2A] to-[#FF6B00]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.12),transparent_60%)]" />
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.08),transparent_60%)]" />
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-otrack-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-otrack-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/20 text-white text-sm mb-6">
               <TbDeviceMobile className="w-4 h-4" />
-              <span className="font-semibold italic">Mobile Application</span>
+              <span className="font-semibold">Mobile Application</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
               Manage Your Fleet From <span className="text-white/80">Anywhere</span>
@@ -252,14 +252,14 @@ function ComingSoonSection() {
         <motion.div {...fadeUp}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F68C2A]/10 border border-[#F68C2A]/20 text-[#F68C2A] text-sm mb-8">
             <TbRadar className="w-4 h-4" />
-            <span className="font-semibold italic">Next-Gen Technology</span>
+            <span className="font-semibold">Next-Gen Technology</span>
           </div>
           <div className="w-16 h-0.5 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-gray-900 mb-6">
             OIS Application{" "}
             <span className="bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] bg-clip-text text-transparent animate-pulse">Coming Soon</span>
           </h2>
-          <p className="text-lg text-gray-700 font-light italic max-w-2xl mx-auto mb-12">
+          <p className="text-lg text-gray-700 font-light max-w-2xl mx-auto mb-12">
             Experience the future of fleet intelligence with our upcoming OIS (O'Track Intelligence System) application. AI-powered analytics, predictive maintenance, and next-generation telematics.
           </p>
           <motion.div
@@ -323,7 +323,7 @@ function CTASection() {
           <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-6">
             Need Help With the Application?
           </h2>
-          <p className="text-white/80 font-light italic mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 font-light mb-8 max-w-xl mx-auto">
             Our support team is ready to assist you with installation, setup, or any questions about the O'Track Global mobile app.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

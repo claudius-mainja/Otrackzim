@@ -22,7 +22,7 @@ function Loading() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-otrack-primary to-otrack-secondary">
       <div className="text-center">
         <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-white/80 animate-pulse font-light italic">Establishing Secure Connection...</p>
+        <p className="text-white/80 animate-pulse font-light">Establishing Secure Connection...</p>
       </div>
     </div>
   );

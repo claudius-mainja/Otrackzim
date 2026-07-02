@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import { FaWhatsapp, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -10,9 +10,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <img src="/logo.svg" alt="O'Track Global" className="h-10 w-auto" />
-            </div>
+            <h3 className="text-2xl font-black text-white uppercase tracking-tight">O'Track Global</h3>
             <p className="text-sm text-otrack-gray leading-relaxed font-light">
               Your trusted partner in vehicle telematics solutions. Delivering cutting-edge GPS tracking and fleet management across Southern Africa.
             </p>
@@ -32,6 +30,14 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-otrack-gray hover:text-otrack-primary hover:bg-white/10 transition-all border border-white/5"
               >
                 <FaFacebookF className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/otrackglobal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-otrack-gray hover:text-otrack-primary hover:bg-white/10 transition-all border border-white/5"
+              >
+                <FaInstagram className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -62,7 +68,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <FiMapPin className="w-4 h-4 text-otrack-primary mt-0.5 shrink-0" />
-                <span className="text-sm text-otrack-gray font-light italic">51 Van Praagh Avenue Milton Park, Harare, Zimbabwe</span>
+                <span className="text-sm text-otrack-gray font-light">51 Van Praagh Avenue Milton Park, Harare, Zimbabwe</span>
               </li>
               <li>
                 <a href="tel:+263779999600" className="flex items-center gap-3 text-sm text-otrack-gray hover:text-otrack-primary transition-colors font-light">
@@ -84,7 +90,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <FiMail className="w-4 h-4 text-otrack-primary mt-0.5 shrink-0" />
-                <span className="text-sm text-otrack-gray font-light italic">info@otrack.co.zw</span>
+                <span className="text-sm text-otrack-gray font-light">info@otrack.co.zw</span>
               </li>
             </ul>
           </div>
@@ -96,20 +102,20 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} O'Track Global. All rights reserved.
             </p>
             <p className="text-sm text-otrack-gray font-light">
-              Powered by{" "}
+              Designed and Developed by{" "}
               <a
-                href="https://www.claudius-mainja.com"
+                href="https://www.blacklemur.co.zw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-otrack-primary hover:text-otrack-secondary transition-colors font-semibold"
               >
-                Claudius Mainja
+                Blacklemur Innovations
               </a>
             </p>
           </div>
 
           <div className="mt-6 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-otrack-gray font-light italic">
+            <p className="text-sm text-otrack-gray font-light">
               Have a question? We're here to help. Reach out to us anytime.
             </p>
             <a

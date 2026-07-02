@@ -25,7 +25,7 @@ export default function WhatsAppChat() {
               </div>
             </div>
             <div className="p-4 bg-otrack-dark">
-              <p className="text-sm text-otrack-gray font-light mb-4 italic">
+              <p className="text-sm text-otrack-gray font-light mb-4">
                 Hi! How can we help you with your fleet management needs?
               </p>
               <a

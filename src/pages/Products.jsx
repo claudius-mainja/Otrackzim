@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { FiPhone, FiArrowRight, FiTarget, FiGlobe, FiMonitor, FiShield } from "react-icons/fi";
+import { FiPhone, FiArrowRight, FiTarget, FiGlobe, FiMonitor, FiShield, FiClock, FiCheckCircle } from "react-icons/fi";
 import { BsFuelPump, BsSoundwave, BsSpeedometer2, BsGeoAlt, BsEye, BsBell, BsGear } from "react-icons/bs";
 import { TbCamera } from "react-icons/tb";
 import { RiPoliceCarLine, RiFingerprint2Line, RiRadarLine } from "react-icons/ri";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import WhatsAppSection from "../components/WhatsAppSection";
+import TelematicsParticles from "../components/TelematicsParticles";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -93,6 +94,7 @@ export default function Products() {
     <div className="relative pt-24">
       <HeroBanner />
       <FeaturedSolution />
+      <FeatureSection />
       <CompleteSolutions />
       <CTASection />
       <WhatsAppSection />
@@ -102,26 +104,14 @@ export default function Products() {
 
 function HeroBanner() {
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-br from-[#F68C2A] to-[#FF6B00]">
-      {floatingIcons.map((Icon, i) => (
-        <motion.div
-          key={i}
-          className="absolute text-white/10"
-          style={{
-            top: `${15 + i * 12}%`,
-            left: `${5 + i * 15}%`,
-            fontSize: `${2 + (i % 3) * 0.5}rem`,
-          }}
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0], opacity: [0.1, 0.2, 0.1] }}
-          transition={{ duration: 3 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-        >
-          <Icon />
-        </motion.div>
-      ))}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.15),transparent_60%)]" />
-      <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.2) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
+    <section className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src="/assets/images/original/heroabout.png" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/85 to-otrack-secondary/85" />
+      </div>
+      <div className="absolute inset-0 z-[1]">
+        <TelematicsParticles />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -137,7 +127,7 @@ function HeroBanner() {
             Tracking Your Vehicles Across{" "}
             <span className="text-white/80">Southern Africa</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light italic">
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light">
             International roaming services available across the entire Southern African region
           </p>
           <motion.div
@@ -204,7 +194,7 @@ function FeaturedSolution() {
             transition={{ duration: 0.7 }}
           >
             <div className="w-12 h-1 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] rounded-full mb-6" />
-            <span className="text-[#F68C2A] text-sm font-bold italic uppercase tracking-wider">Featured Solution</span>
+            <span className="text-[#F68C2A] text-sm font-bold uppercase tracking-wider">Featured Solution</span>
             <div className="flex items-center gap-2 mt-2 mb-4">
               <span className="text-xs px-3 py-1 rounded-full bg-[#F68C2A]/10 text-[#F68C2A] border border-[#F68C2A]/20 font-semibold">
                 Advanced GPS Technology
@@ -213,7 +203,7 @@ function FeaturedSolution() {
             <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight mb-6 text-gray-900">
               Vehicle Tracking & <span className="text-[#F68C2A]">Surveillance System</span>
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-8 font-light italic">
+            <p className="text-gray-600 leading-relaxed mb-8 font-light">
               Our flagship GPS and satellite tracking solution provides comprehensive fleet management capabilities with real-time insights, driver behavior analytics, and proactive maintenance alerts. Experience complete visibility and control over your entire fleet.
             </p>
             <motion.div
@@ -244,6 +234,49 @@ function FeaturedSolution() {
   );
 }
 
+function FeatureSection() {
+  const features = [
+    { icon: FiGlobe, title: "Cross-Border Tracking", desc: "International roaming services that keep you connected across Southern Africa and beyond." },
+    { icon: FiClock, title: "Real-Time Monitoring", desc: "Instant visibility into vehicle location, speed, and status with live GPS tracking updates." },
+    { icon: FiShield, title: "Enterprise Security", desc: "Multi-layered protection including remote immobilization and driver authentication systems." },
+    { icon: FiCheckCircle, title: "Reliable Infrastructure", desc: "Robust platform built on scalable technology ensuring 99.9% uptime for your fleet." },
+  ];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div className="text-center mb-16" {...fadeUp}>
+          <div className="w-16 h-0.5 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] mx-auto mb-4" />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-gray-900">Solutions That Deliver Results</h2>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto font-light">Every product we build is backed by enterprise-grade reliability and cutting-edge innovation</p>
+        </motion.div>
+        <motion.div
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              variants={staggerItem}
+              whileHover={{ y: -5, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+              className="bg-white rounded-xl p-6 border border-gray-100 shadow-lg hover:shadow-xl hover:shadow-[#F68C2A]/10 hover:border-[#F68C2A]/20 transition-all duration-300 group text-center"
+            >
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F68C2A] to-[#FF6B00] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <f.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight mb-2">{f.title}</h3>
+              <p className="text-sm text-gray-600 font-light">{f.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function CompleteSolutions() {
   return (
     <section className="relative py-24 bg-[#231F20] overflow-hidden">
@@ -253,11 +286,11 @@ function CompleteSolutions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div className="text-center mb-16" {...fadeUp}>
           <div className="w-12 h-1 bg-gradient-to-r from-[#F68C2A] to-[#FF6B00] rounded-full mx-auto mb-6" />
-          <span className="text-[#F68C2A] text-sm font-bold italic uppercase tracking-wider">Complete Solutions</span>
+          <span className="text-[#F68C2A] text-sm font-bold uppercase tracking-wider">Complete Solutions</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight mt-3 text-white">
             Explore Our <span className="text-[#F68C2A]">Product Range</span>
           </h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto font-light italic">
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto font-light">
             Comprehensive suite of security and monitoring solutions designed to protect your assets
           </p>
         </motion.div>
@@ -344,7 +377,7 @@ function CTASection() {
           <h2 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight mb-6 text-gray-900">
             Interested in a <span className="text-[#F68C2A]">Specific Solution?</span>
           </h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto font-light italic">
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto font-light">
             Contact our team for a personalized consultation and discover the right solution for your fleet.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
