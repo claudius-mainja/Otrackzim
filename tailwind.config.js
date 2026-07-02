@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Fixel", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Fixel", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Mulish", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["Mulish", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

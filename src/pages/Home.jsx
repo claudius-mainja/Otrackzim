@@ -202,8 +202,11 @@ function AboutSection() {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 lg:py-32 bg-otrack-dark overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-otrack-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-otrack-secondary/5 rounded-full blur-3xl" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -212,22 +215,29 @@ function AboutSection() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 z-10 p-6 bg-gradient-to-b from-black/60 to-transparent">
-                <div className="w-16 h-0.5 bg-otrack-primary mb-2" />
-                <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white">
-                  About O'Track Global
-                </h2>
+            <div className="relative rounded-2xl overflow-hidden border border-otrack-primary/20 shadow-lg shadow-otrack-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-t from-otrack-dark/80 via-transparent to-transparent z-10" />
+              <div className="absolute top-0 left-0 right-0 z-20 p-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-otrack-primary/20 border border-otrack-primary/30 text-otrack-primary text-sm font-heading font-semibold mb-3">
+                  <FiShield className="w-3 h-3" />
+                  About Us
+                </div>
               </div>
               <img
                 src="https://www.otrack.co.zw/assets/images/aboutfeature.png"
                 alt="O'Track Global About"
-                className="w-full h-auto rounded-2xl"
+                className="w-full h-auto"
                 loading="lazy"
                 onError={(e) => {
                   e.target.style.display = "none";
                 }}
               />
+              <div className="absolute bottom-0 left-0 right-0 z-20 p-6">
+                <div className="w-16 h-0.5 bg-otrack-primary mb-3" />
+                <h2 className="text-2xl sm:text-3xl font-heading font-extrabold uppercase tracking-tight text-white">
+                  About O'Track Global
+                </h2>
+              </div>
             </div>
           </motion.div>
 
@@ -237,7 +247,7 @@ function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-gray-700 leading-relaxed mb-4 font-light">
+            <p className="text-gray-300 leading-relaxed mb-4 font-body">
               O'Track Global stands at the forefront of vehicle telematics
               innovation, delivering cutting-edge solutions that transform how
               businesses manage their fleets across Southern Africa and beyond.
@@ -245,7 +255,7 @@ function AboutSection() {
               management, we've built a reputation for reliability, innovation,
               and exceptional customer service.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-8 font-light">
+            <p className="text-gray-300 leading-relaxed mb-8 font-body">
               Our mission is to enhance efficiency, safety, and security in the
               transportation industry through advanced technology and
               personalized support. We understand that every fleet is unique,
@@ -262,12 +272,12 @@ function AboutSection() {
                   whileInView="whileInView"
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-slate-200/70 border border-slate-200"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-otrack-primary/30 transition-all duration-300 group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-otrack-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-otrack-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-otrack-primary/20 transition-colors">
                     <f.icon className="w-5 h-5 text-otrack-primary" />
                   </div>
-                  <span className="text-sm font-bold text-gray-800 uppercase tracking-tight">
+                  <span className="text-sm font-heading font-bold text-white uppercase tracking-tight">
                     {f.title}
                   </span>
                 </motion.div>
@@ -276,7 +286,7 @@ function AboutSection() {
 
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-otrack-primary to-otrack-secondary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-otrack-primary/25 transition-all duration-300 group"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-otrack-primary to-otrack-secondary text-white font-heading font-semibold rounded-lg hover:shadow-lg hover:shadow-otrack-primary/25 transition-all duration-300 group"
             >
               Learn More About Us
               <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -325,14 +335,20 @@ function WhatWeOfferSection() {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 bg-slate-200">
+    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-20" />
+      <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-otrack-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-otrack-secondary/5 rounded-full blur-3xl" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div className="text-center mb-16" {...fadeUp}>
-          <div className="w-16 h-0.5 bg-otrack-primary mx-auto mb-4" />
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-gray-900">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-otrack-primary/10 border border-otrack-primary/20 text-otrack-primary text-sm font-heading font-semibold mb-4">
+            <FiCheckCircle className="w-3 h-3" />
+            Our Solutions
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold uppercase tracking-tight text-gray-900">
             What We Offer
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto font-light">
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto font-body">
             Comprehensive solutions designed to give you complete control and
             visibility over your fleet
           </p>
@@ -350,33 +366,35 @@ function WhatWeOfferSection() {
               key={i}
               variants={staggerItem}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white/80 backdrop-blur-md rounded-2xl border border-white/60 overflow-hidden group hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-2xl border border-gray-200 overflow-hidden group hover:border-otrack-primary/30 hover:shadow-xl hover:shadow-otrack-primary/10 transition-all duration-500"
             >
-              <div className="relative h-72 overflow-hidden bg-white/50">
+              <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+                <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-contain p-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
                   loading="lazy"
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent group-hover:to-otrack-primary/5 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 uppercase tracking-tight mb-3">
+              <div className="p-6 relative">
+                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-otrack-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <h3 className="text-xl font-heading font-bold text-gray-900 uppercase tracking-tight mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-700 text-sm leading-relaxed mb-5 font-light">
+                <p className="text-gray-600 text-sm leading-relaxed mb-5 font-body">
                   {feature.desc}
                 </p>
                 <ul className="space-y-2 mb-6">
                   {feature.highlights.map((h, j) => (
                     <li
                       key={j}
-                      className="flex items-center gap-2 text-sm text-gray-600"
+                      className="flex items-center gap-2 text-sm text-gray-500 font-body"
                     >
                       <FiCheckCircle className="w-4 h-4 text-otrack-primary flex-shrink-0" />
                       {h}
@@ -385,7 +403,7 @@ function WhatWeOfferSection() {
                 </ul>
                 <Link
                   to="/products"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-otrack-primary hover:text-otrack-secondary transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-otrack-primary hover:text-otrack-secondary transition-colors group"
                 >
                   Learn More
                   <FiArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
