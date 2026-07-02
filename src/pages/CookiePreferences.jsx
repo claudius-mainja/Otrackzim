@@ -35,7 +35,7 @@ export default function CookiePreferences() {
       />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">Cookie Preferences</h1>
+          <h1 className="text-4xl sm:text-5xl font-black uppercase text-gray-900 mb-4  tracking-tight">Cookie Preferences</h1>
           <p className="text-gray-600 mb-8">Last updated: January 2026</p>
 
           <div className="space-y-6 text-gray-700">
@@ -44,7 +44,7 @@ export default function CookiePreferences() {
             </Section>
 
             <Section>
-              <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-4">Manage Cookie Preferences</h2>
+              <h2 className="text-xl font-extrabold uppercase text-gray-900  mb-4">Manage Cookie Preferences</h2>
               <div className="space-y-4">
                 {cookieTypes.map((cookie, i) => (
                   <div key={i} className="glass-card backdrop-blur-md p-6 border-gray-200">
@@ -138,7 +138,7 @@ export default function CookiePreferences() {
 function Section({ title, children }) {
   return (
     <div className="border-b border-gray-200 pb-6 last:border-0">
-      {title && <h2 className="text-xl font-extrabold text-gray-900 uppercase mb-3">{title}</h2>}
+      {title && <h2 className="text-xl font-extrabold uppercase text-gray-900  mb-3">{title}</h2>}
       <div className="text-sm leading-relaxed">{children}</div>
     </div>
   );

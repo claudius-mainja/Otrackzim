@@ -70,36 +70,84 @@ export default function About() {
 
 function HeroBanner() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img src="/assets/images/original/heroabout.png" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/85 to-otrack-secondary/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-otrack-dark/95 via-otrack-primary/80 to-otrack-secondary/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.1),transparent_60%)]" />
       </div>
       <div className="absolute inset-0 z-[1]">
         <TelematicsParticles />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm mb-6">
-            <TbRadar className="w-4 h-4" />
-            <span className="font-semibold">About O'Track Global</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
-            Driving Innovation in <span className="text-white/80">Vehicle Telematics</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light">
-            Leading the way in vehicle telematics and fleet management solutions across Southern Africa
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link to="/careers" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#F68C2A] font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
-              Join Our Team <FiArrowRight className="w-4 h-4" />
-            </Link>
-            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 group">
-              Contact Us <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </motion.div>
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm mb-6">
+              <TbRadar className="w-4 h-4" />
+              <span className="font-semibold">About O'Track Global</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
+              Driving Innovation in{" "}
+              <motion.span
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="text-white/90"
+              >
+                Vehicle Telematics
+              </motion.span>
+            </h1>
+            <p className="text-lg sm:text-xl text-white/90 max-w-xl font-light leading-relaxed">
+              Leading the way in vehicle telematics and fleet management solutions across Southern Africa
+            </p>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link
+                to="/careers"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#F68C2A] font-bold rounded-lg hover:shadow-xl hover:shadow-white/20 transition-all duration-300 group"
+              >
+                Join Our Team <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-otrack-primary/40 transition-all duration-300 group backdrop-blur-sm"
+              >
+                Contact Us <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden lg:grid gap-4"
+          >
+            {[
+              { icon: FiShield, title: "Innovation", desc: "Cutting-edge telematics technology" },
+              { icon: FiUsers, title: "Expertise", desc: "15+ years of industry leadership" },
+              { icon: FiHeadphones, title: "Support", desc: "24/7 dedicated customer care" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.15 }}
+                whileHover={{ x: 6 }}
+                className="flex items-center gap-4 bg-white/5 backdrop-blur-md rounded-xl p-5 border border-white/10 hover:border-white/20 transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-otrack-primary/20 to-otrack-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <item.icon className="w-6 h-6 text-otrack-primary" />
+                </div>
+                <div>
+                  <div className="text-white font-bold uppercase text-sm tracking-wider">{item.title}</div>
+                  <div className="text-white/70 text-sm font-light">{item.desc}</div>
+                </div>
+                <FiArrowRight className="w-4 h-4 text-white/20 ml-auto group-hover:text-otrack-primary group-hover:translate-x-1 transition-all" />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   );
 }
@@ -169,7 +217,7 @@ function FeatureSection() {
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F68C2A] to-[#FF6B00] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <f.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight mb-2">{f.title}</h3>
+              <h3 className="text-lg font-bold uppercase text-gray-900  tracking-tight mb-2">{f.title}</h3>
               <p className="text-sm text-gray-600 font-light">{f.desc}</p>
             </motion.div>
           ))}

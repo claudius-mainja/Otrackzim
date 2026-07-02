@@ -50,7 +50,7 @@ export default function WhatsAppSection() {
             <FaWhatsapp className="w-4 h-4" />
             <span>Let's Chat via WhatsApp or Calls!</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white  tracking-tight">
             Choose How You'd Like to <span className="gradient-text">Connect With Us</span>
           </h2>
         </motion.div>
@@ -73,7 +73,7 @@ export default function WhatsAppSection() {
                 <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <channel.icon className="w-7 h-7 text-otrack-primary" />
                 </div>
-                <h3 className="text-white font-semibold uppercase mb-1">{channel.title}</h3>
+                <h3 className="text-white font-semibold  mb-1">{channel.title}</h3>
                 <p className="text-sm text-otrack-gray font-light">{channel.desc}</p>
               </div>
             </motion.a>

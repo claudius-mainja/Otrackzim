@@ -110,56 +110,121 @@ export default function Products() {
 }
 
 function HeroBanner() {
+  const techIcons = [BsGeoAlt, BsFuelPump, BsSoundwave, BsSpeedometer2, BsEye, FiGlobe];
+  const productLabels = ["GPS Tracking", "Fuel Monitoring", "Security Alarms", "Speed Limiters", "MDVR Cameras", "Panic Buttons"];
+
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative min-h-[88vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img src="/assets/images/original/heroabout.png" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/85 to-otrack-secondary/85" />
+        <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/90 via-otrack-primary/80 to-otrack-secondary/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06),transparent_50%)]" />
+        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       </div>
       <div className="absolute inset-0 z-[1]">
         <TelematicsParticles />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
+        <div className="relative">
+          {techIcons.map((Icon, i) => {
+            const positions = [
+              { top: "-10%", right: "0%", size: "w-10 h-10", delay: "0s" },
+              { top: "20%", right: "-5%", size: "w-8 h-8", delay: "0.5s" },
+              { top: "55%", right: "2%", size: "w-9 h-9", delay: "1s" },
+              { top: "-5%", left: "0%", size: "w-8 h-8", delay: "0.3s" },
+              { top: "30%", left: "-3%", size: "w-10 h-10", delay: "0.8s" },
+              { top: "65%", left: "0%", size: "w-9 h-9", delay: "1.2s" },
+            ];
+            return (
+              <motion.div
+                key={i}
+                className={`absolute hidden lg:flex items-center gap-2 ${positions[i].size} bg-white/10 backdrop-blur-md rounded-lg border border-white/10 p-2`}
+                style={{ top: positions[i].top, right: positions[i].right, left: positions[i].left }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 + i * 0.15, type: "spring", stiffness: 200 }}
+              >
+                <Icon className="w-4 h-4 text-white" />
+                <span className="text-[8px] text-white/70 font-semibold uppercase hidden xl:inline">{productLabels[i]}</span>
+              </motion.div>
+            );
+          })}
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-semibold mb-6"
-          >
-            Products & Solutions
-          </motion.div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
-            Tracking Your Vehicles Across{" "}
-            <span className="text-white/80">Southern Africa</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-light">
-            International roaming services available across the entire Southern African region
-          </p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4 mt-8"
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#F68C2A] font-bold rounded-xl hover:shadow-2xl hover:shadow-white/30 transition-all duration-300 group"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold mb-6"
             >
-              Request Demo <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <a
-              href="tel:+263779999600"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 group backdrop-blur-sm"
+              <FiTarget className="w-4 h-4" />
+              Products & Solutions
+            </motion.div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
+              Tracking Your Vehicles Across{" "}
+              <motion.span
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="text-white/90 inline-block"
+              >
+                Southern Africa
+              </motion.span>
+            </h1>
+
+            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
+              International roaming services available across the entire Southern African region
+            </p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-4 mt-10"
             >
-              <FiPhone className="w-4 h-4" /> Contact Sales
-            </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#F68C2A] font-bold rounded-xl hover:shadow-2xl hover:shadow-white/30 transition-all duration-300 group"
+              >
+                Request Demo <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a
+                href="tel:+263779999600"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-otrack-primary/40 transition-all duration-300 group backdrop-blur-sm"
+              >
+                <FiPhone className="w-4 h-4" /> Contact Sales
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="hidden lg:flex items-center justify-center gap-6 mt-14"
+            >
+              {["Real-time GPS", "Geofence Alerts", "Driver ID", "24/7 Support"].map((tag, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 + i * 0.1 }}
+                  className="text-xs text-white/40 font-light uppercase tracking-wider px-3 py-1.5 border border-white/10 rounded-full"
+                >
+                  {tag}
+                </motion.span>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
-      <div className="absolute -bottom-1 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute -bottom-1 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   );
 }
@@ -274,7 +339,7 @@ function FeatureSection() {
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F68C2A] to-[#FF6B00] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <f.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight mb-2">{f.title}</h3>
+              <h3 className="text-lg font-bold uppercase text-gray-900  tracking-tight mb-2">{f.title}</h3>
               <p className="text-sm text-gray-600 font-light">{f.desc}</p>
             </motion.div>
           ))}
@@ -344,7 +409,7 @@ function CompleteSolutions() {
                   <div className="w-12 h-12 rounded-xl bg-[#F68C2A]/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#F68C2A]/20 transition-all duration-300">
                     <product.icon className="w-6 h-6 text-[#F68C2A]" />
                   </div>
-                  <h3 className="text-xl font-bold text-white uppercase mb-2">{product.title}</h3>
+                  <h3 className="text-xl font-bold uppercase text-white  mb-2">{product.title}</h3>
                   <p className="text-sm text-gray-400 mb-4 font-light leading-relaxed">{product.desc}</p>
                   <ul className="space-y-2">
                     {product.features.map((f, j) => (

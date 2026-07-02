@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-5">
-            <h3 className="text-2xl font-black text-white uppercase tracking-tight">O'Track Global</h3>
+            <h3 className="text-2xl font-black text-white  tracking-tight">O'Track Global</h3>
             <p className="text-sm text-otrack-gray leading-relaxed font-light">
               Your trusted partner in vehicle telematics solutions. Delivering cutting-edge GPS tracking and fleet management across Southern Africa.
             </p>
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-5">Quick Links</h3>
+            <h3 className="text-sm font-bold text-white  tracking-wider mb-5">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link to="/" className="text-sm text-otrack-gray hover:text-otrack-primary transition-colors font-light">Home</Link></li>
               <li><Link to="/about" className="text-sm text-otrack-gray hover:text-otrack-primary transition-colors font-light">About Us</Link></li>
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-5">Legal</h3>
+            <h3 className="text-sm font-bold text-white  tracking-wider mb-5">Legal</h3>
             <ul className="space-y-3">
               <li><Link to="/privacy-policy" className="text-sm text-otrack-gray hover:text-otrack-primary transition-colors font-light">Privacy Policy</Link></li>
               <li><Link to="/terms-conditions" className="text-sm text-otrack-gray hover:text-otrack-primary transition-colors font-light">Terms & Conditions</Link></li>
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-5">Contact Us</h3>
+            <h3 className="text-sm font-bold text-white  tracking-wider mb-5">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <FiMapPin className="w-4 h-4 text-otrack-primary mt-0.5 shrink-0" />

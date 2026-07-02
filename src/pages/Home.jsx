@@ -68,57 +68,77 @@ function HeroSection() {
         <img
           src="/assets/images/original/heroimage1.png"
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.06),transparent_60%)]" />
       </div>
       <div className="absolute inset-0 z-[1]">
         <TelematicsParticles />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-28 pb-16 lg:pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs sm:text-sm mb-4">
               <TbRadar className="w-4 h-4" />
               <span className="font-semibold">
                 WELCOME TO O'TRACK GLOBAL
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-black font-display uppercase leading-tight mb-6 text-white">
-              We Are Your Reliable Partner in <br />
-              <span className="text-white">Vehicle Tracking,</span>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black uppercase leading-tight mb-3 text-white">
+              We Are Your Reliable Partner in{" "}
+              <span className="gradient-text">Vehicle Tracking,</span>
               <br />
               <span className="text-white">Fleet Management & Beyond</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-xl mb-8 font-light">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed max-w-xl mb-4 font-light">
               Let us enhance efficiency, safety, and security in your
               transportation operations with our cutting-edge GPS technology,
               comprehensive fleet management tools, and unparalleled customer
               service that keeps your business moving forward.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 mb-5">
               <a
                 href="tel:+263779999600"
-                className="flex items-center gap-2 px-6 py-3 bg-white text-otrack-primary font-semibold rounded-lg hover:shadow-lg hover:shadow-white/25 transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-otrack-primary to-otrack-secondary text-white font-bold rounded-lg hover:shadow-lg hover:shadow-otrack-primary/30 transition-all duration-300 hover:scale-105"
               >
-                <FiPhone className="w-4 h-4" />
+                <FiPhone className="w-3.5 h-3.5" />
                 Get a Quote
               </a>
               <Link
                 to="/products"
-                className="flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 group"
+                className="flex items-center gap-2 px-5 py-2.5 bg-white/10 border border-white/25 text-white font-semibold rounded-lg hover:bg-white/20 hover:border-otrack-primary/40 transition-all duration-300 group backdrop-blur-sm"
               >
                 Explore Solutions
                 <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
+            </div>
+
+            <div className="hidden sm:grid grid-cols-3 gap-4 border-t border-white/10 pt-3">
+              {[
+                { number: "1000+", label: "Vehicles Tracked" },
+                { number: "15+", label: "Years Experience" },
+                { number: "24/7", label: "Support" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-lg sm:text-xl font-black gradient-text">{stat.number}</div>
+                  <div className="text-xs text-white/50 uppercase tracking-widest mt-1">{stat.label}</div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -128,23 +148,104 @@ function HeroSection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden lg:flex items-center justify-center"
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-lg"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-2xl blur-sm" />
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-sm">
-                <div className="aspect-[4/3] flex items-center justify-center p-8">
-                  <TbRadar className="w-24 h-24 text-white/40 animate-pulse-slow" />
+            <div className="relative w-full max-w-lg">
+              <div className="absolute -inset-4 bg-gradient-to-r from-otrack-primary/20 to-otrack-secondary/20 rounded-3xl blur-xl" />
+              <div className="relative bg-white/[0.06] backdrop-blur-2xl rounded-2xl border border-white/10 p-3 overflow-hidden">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="relative flex w-1.5 h-1.5">
+                      <span className="absolute inset-0 rounded-full bg-green-400 animate-ping" />
+                      <span className="relative rounded-full bg-green-400 w-1.5 h-1.5" />
+                    </span>
+                    <span className="text-[10px] text-white/50 font-light uppercase tracking-wider">Live</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {["#F68C2A", "#10B981", "#3B82F6"].map((color, i) => (
+                      <span key={i} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative aspect-square mb-2 rounded-xl bg-black/40 border border-white/[0.06] overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <TbRadar className="w-20 h-20 text-otrack-primary/10 animate-spin-slow" />
+                  </div>
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.08),transparent_60%)]" />
+                  {[
+                    { top: "18%", left: "28%", delay: "0s" },
+                    { top: "55%", left: "72%", delay: "0.6s" },
+                    { top: "38%", left: "48%", delay: "1.2s" },
+                    { top: "72%", left: "22%", delay: "0.3s" },
+                    { top: "25%", left: "78%", delay: "0.9s" },
+                    { top: "80%", left: "65%", delay: "1.5s" },
+                  ].map((dot, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-2 h-2 rounded-full bg-otrack-primary shadow-lg shadow-otrack-primary/50"
+                      style={{ top: dot.top, left: dot.left }}
+                      animate={{
+                        opacity: [0, 1, 0],
+                        scale: [0, 1.8, 0],
+                        boxShadow: ["0 0 0px rgba(246,140,42,0)", "0 0 12px rgba(246,140,42,0.6)", "0 0 0px rgba(246,140,42,0)"],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        delay: parseFloat(dot.delay),
+                        ease: "easeInOut",
+                      }}
+                    />
+                  ))}
+                  <div className="absolute bottom-3 left-3 right-3 flex justify-between">
+                    <span className="text-[10px] text-white/20 font-mono">SECTOR A</span>
+                    <span className="text-[10px] text-white/20 font-mono">RNG: 15KM</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-1.5">
+                  {[
+                    { label: "Active Vehicles", value: "12", color: "text-emerald-400" },
+                    { label: "Today's Alerts", value: "3", color: "text-otrack-primary" },
+                    { label: "Fuel Saved", value: "8.2L", color: "text-blue-400" },
+                    { label: "Route Compl.", value: "94%", color: "text-otrack-secondary" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8 + i * 0.1 }}
+                      className="bg-black/30 rounded-lg p-1.5 border border-white/[0.06] hover:border-otrack-primary/20 transition-colors"
+                    >
+                      <div className="text-[8px] text-white/40 font-light uppercase tracking-wider">{item.label}</div>
+                      <div className={`text-sm font-black ${item.color}`}>{item.value}</div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent z-10" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
+      >
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-col items-center gap-1"
+        >
+          <span className="text-[8px] text-white/30 uppercase tracking-[0.2em]">Explore</span>
+          <svg className="w-3 h-3 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </motion.div>
+      </motion.div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-10" />
     </section>
   );
 }
@@ -277,7 +378,7 @@ function AboutSection() {
                   <div className="w-10 h-10 rounded-lg bg-otrack-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-otrack-primary/20 transition-colors">
                     <f.icon className="w-5 h-5 text-otrack-primary" />
                   </div>
-                  <span className="text-sm font-heading font-bold text-white uppercase tracking-tight">
+                  <span className="text-sm font-heading font-bold text-white  tracking-tight">
                     {f.title}
                   </span>
                 </motion.div>
@@ -334,13 +435,27 @@ function WhatWeOfferSection() {
     },
   ];
 
+  const accentColors = [
+    "from-otrack-primary to-orange-400",
+    "from-otrack-dark to-gray-700",
+    "from-otrack-secondary to-otrack-primary",
+  ];
+
   return (
     <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-otrack-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-otrack-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-otrack-primary/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-otrack-secondary/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 right-0 w-32 h-32 border border-otrack-primary/10 rounded-full" />
+        <div className="absolute bottom-1/4 left-[10%] w-20 h-20 border border-otrack-secondary/10 rounded-full" />
+        <svg className="absolute top-0 right-0 w-64 h-64 text-otrack-primary/[0.03]" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="100" cy="100" r="50" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="100" cy="100" r="20" stroke="currentColor" strokeWidth="0.5" />
+        </svg>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div className="text-center mb-16" {...fadeUp}>
+        <motion.div className="text-center mb-20" {...fadeUp}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-otrack-primary/10 border border-otrack-primary/20 text-otrack-primary text-sm font-heading font-semibold mb-4">
             <FiCheckCircle className="w-3 h-3" />
             Our Solutions
@@ -354,64 +469,99 @@ function WhatWeOfferSection() {
           </p>
         </motion.div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
-        >
-          {features.map((feature, i) => (
-            <motion.div
-              key={i}
-              variants={staggerItem}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden group hover:border-otrack-primary/30 hover:shadow-xl hover:shadow-otrack-primary/10 transition-all duration-500"
-            >
-              <div className="relative h-72 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
-                <div className="absolute inset-0 bg-gradient-to-br from-otrack-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-full object-contain p-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent" />
-              </div>
-              <div className="p-6 relative">
-                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-otrack-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <h3 className="text-xl font-heading font-bold text-gray-900 uppercase tracking-tight mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5 font-body">
-                  {feature.desc}
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {feature.highlights.map((h, j) => (
-                    <li
-                      key={j}
-                      className="flex items-center gap-2 text-sm text-gray-500 font-body"
+        <div className="relative">
+          <div className="absolute left-[30px] top-0 bottom-0 w-px bg-gradient-to-b from-otrack-primary/30 via-otrack-secondary/20 to-transparent hidden lg:block" />
+
+          {features.map((feature, i) => {
+            const isLeft = i % 2 === 0;
+
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, delay: i * 0.15 }}
+                className="relative mb-16 lg:mb-24 last:mb-0"
+              >
+                <div className="hidden lg:flex absolute left-[22px] top-8 z-10 w-[17px] h-[17px] rounded-full bg-white border-4 border-otrack-primary shadow-lg shadow-otrack-primary/20" />
+
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className={`relative group ${!isLeft ? "lg:order-2" : ""}`}
+                  >
+                    <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-50 to-white border border-gray-100 shadow-lg shadow-gray-200/50">
+                      <div className={`absolute inset-0 bg-gradient-to-tr ${accentColors[i]} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                      <div className="relative aspect-[4/3] p-8 flex items-center justify-center">
+                        <img
+                          src={feature.image}
+                          alt={feature.title}
+                          className="w-full h-full object-contain transition-all duration-700 group-hover:scale-110 group-hover:-rotate-1"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                          }}
+                        />
+                      </div>
+                      <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${accentColors[i]} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: isLeft ? 5 : -5 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className={`relative ${!isLeft ? "lg:order-1" : ""}`}
+                  >
+                    <div className="hidden lg:flex items-center gap-3 mb-4">
+                      <span className={`text-5xl font-black bg-gradient-to-r ${accentColors[i]} bg-clip-text text-transparent`}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className={`h-px flex-1 bg-gradient-to-r ${accentColors[i]}`} />
+                    </div>
+
+                    <h3 className="text-2xl sm:text-3xl font-heading font-bold uppercase tracking-tight text-gray-900 mb-4">
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-gray-600 leading-relaxed mb-6 font-body">
+                      {feature.desc}
+                    </p>
+
+                    <div className="space-y-3 mb-8">
+                      {feature.highlights.map((h, j) => (
+                        <motion.div
+                          key={j}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: j * 0.1 + i * 0.15 }}
+                          className="flex items-center gap-3"
+                        >
+                          <span className={`w-6 h-6 rounded-full bg-gradient-to-br ${accentColors[i]} flex items-center justify-center flex-shrink-0`}>
+                            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="text-sm text-gray-600 font-body">{h}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <Link
+                      to="/products"
+                      className={`inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r ${accentColors[i]} text-white text-sm font-heading font-semibold rounded-lg hover:shadow-lg hover:shadow-otrack-primary/25 transition-all duration-300 group`}
                     >
-                      <FiCheckCircle className="w-4 h-4 text-otrack-primary flex-shrink-0" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/products"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-otrack-primary hover:text-otrack-secondary transition-colors group"
-                >
-                  Learn More
-                  <FiArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                      Learn More
+                      <FiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -553,7 +703,7 @@ function AdvantageSection() {
                   }}
                 />
               </div>
-              <h3 className="text-lg font-bold text-white uppercase tracking-tight mb-3">
+              <h3 className="text-lg font-bold uppercase text-white  tracking-tight mb-3">
                 {item.title}
               </h3>
               <p className="text-otrack-gray text-sm leading-relaxed font-light">
@@ -587,7 +737,7 @@ function FeatureImageSection() {
           <div className="absolute inset-0 bg-gradient-to-r from-otrack-dark/80 via-otrack-dark/40 to-transparent flex items-center">
             <div className="p-8 sm:p-12 lg:p-16 max-w-xl">
               <div className="w-16 h-0.5 bg-otrack-primary mb-6" />
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white uppercase tracking-tight mb-4">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-white  tracking-tight mb-4">
                 Comprehensive Fleet Solutions
               </h3>
               <p className="text-otrack-gray text-sm sm:text-base leading-relaxed font-light">

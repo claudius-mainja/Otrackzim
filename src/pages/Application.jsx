@@ -50,65 +50,165 @@ export default function Application() {
 
 function HeroSection() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 to-black">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.08),transparent_60%)]" />
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-otrack-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-otrack-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-black">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.06),transparent_60%)]" />
+      <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, rgba(246,140,42,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(255,107,0,0.04) 0%, transparent 50%)" }} />
+      <div className="absolute top-1/4 -right-24 w-96 h-96 bg-otrack-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-24 w-80 h-80 bg-otrack-secondary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/20 text-white text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm mb-6">
               <TbDeviceMobile className="w-4 h-4" />
               <span className="font-semibold">Mobile Application</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight mb-6 text-white">
-              Manage Your Fleet From <span className="text-white/80">Anywhere</span>
+              Manage Your Fleet From{" "}
+              <motion.span
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="text-otrack-primary"
+              >
+                Anywhere
+              </motion.span>
             </h1>
-            <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
+            <p className="text-lg text-white/90 font-light leading-relaxed mb-10 max-w-xl">
               Download the O'Track Global mobile application and take complete control of your fleet management operations right from your smartphone. Real-time tracking, instant alerts, and comprehensive analytics at your fingertips.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="#" className="flex items-center gap-3 px-6 py-3 bg-white text-[#F68C2A] font-bold rounded-xl hover:shadow-xl hover:shadow-black/20 transition-all group">
+              <Link to="#" className="flex items-center gap-3 px-6 py-3 bg-white text-[#F68C2A] font-bold rounded-xl hover:shadow-xl hover:shadow-white/20 transition-all group">
                 <FaGooglePlay className="w-6 h-6" />
                 <span>Download Now</span>
               </Link>
-              <Link to="#" className="flex items-center gap-3 px-6 py-3 bg-white/10 text-white rounded-xl border border-white/20 transition-all group hover:bg-white/20">
+              <Link to="#" className="flex items-center gap-3 px-6 py-3 bg-white/10 text-white rounded-xl border border-white/20 transition-all group hover:bg-white/20 hover:border-otrack-primary/30 backdrop-blur-sm">
                 <FaApple className="w-6 h-6" />
                 <span>Get Early Access</span>
               </Link>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="hidden sm:flex items-center gap-6 mt-12 border-t border-white/10 pt-6"
+            >
+              <div className="flex -space-x-2">
+                {["#F68C2A", "#10B981", "#3B82F6", "#8B5CF6"].map((color, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1 + i * 0.1 }}
+                    className="w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center text-[10px] font-bold"
+                    style={{ backgroundColor: color }}
+                  >
+                    {["G", "F", "S", "T"][i]}
+                  </motion.div>
+                ))}
+              </div>
+              <div className="text-xs text-white/40 font-light">
+                <span className="text-white/60 font-semibold">4.8★</span> App Store Rating
+              </div>
+            </motion.div>
           </motion.div>
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden lg:flex justify-center"
           >
-            <div className="relative w-64 h-[500px]">
-              <div className="absolute inset-0 bg-white/20 rounded-[2rem] blur-3xl" />
-              <div className="relative w-full h-full rounded-[2rem] border border-white/20 bg-white/10 backdrop-blur-sm overflow-hidden p-4">
-                <div className="flex items-center justify-between mb-6">
-                  <img src="/logo.svg" alt="" className="h-6 w-auto opacity-80" />
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                </div>
-                <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-lg">
-                    <p className="text-xs text-white font-bold uppercase tracking-tight">Fleet Status</p>
-                    <div className="flex items-center justify-between mt-1">
-                      <span className="text-white text-sm font-bold">12 Active</span>
-                      <span className="text-green-400 text-xs font-light">● Online</span>
+            <div className="relative">
+              {[
+                { icon: FiMapPin, label: "Live GPS", top: "-8%", right: "-12%", delay: "0.6s" },
+                { icon: FiBell, label: "Alerts", bottom: "15%", right: "-14%", delay: "0.8s" },
+                { icon: BsGraphUpArrow, label: "Analytics", top: "20%", left: "-14%", delay: "1s" },
+              ].map((badge, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: parseFloat(badge.delay) + 0.5, type: "spring", stiffness: 200 }}
+                  className="absolute z-20 flex items-center gap-2 bg-white/10 backdrop-blur-xl rounded-lg px-3 py-2 border border-white/10"
+                  style={{ top: badge.top, bottom: badge.bottom, right: badge.right, left: badge.left }}
+                >
+                  <badge.icon className="w-3.5 h-3.5 text-otrack-primary" />
+                  <span className="text-[10px] text-white font-semibold uppercase tracking-wider">{badge.label}</span>
+                </motion.div>
+              ))}
+
+              <div className="relative w-72 h-[520px]">
+                <div className="absolute inset-0 bg-gradient-to-b from-otrack-primary/20 to-otrack-secondary/10 rounded-[2.5rem] blur-3xl" />
+                <div className="relative w-full h-full rounded-[2.5rem] border border-white/20 bg-gradient-to-b from-white/[0.08] to-white/[0.03] backdrop-blur-2xl overflow-hidden p-5 shadow-2xl">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-2">
+                      <img src="/logo.svg" alt="" className="h-5 w-auto opacity-80" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="relative flex w-2 h-2">
+                        <span className="absolute inset-0 rounded-full bg-green-400 animate-ping" />
+                        <span className="relative rounded-full bg-green-400 w-2 h-2" />
+                      </span>
+                      <span className="text-[9px] text-white/40 font-light uppercase tracking-wider">Online</span>
                     </div>
                   </div>
-                  <div className="h-32 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center">
-                    <TbRadar className="w-8 h-8 text-white animate-pulse-slow" />
-                  </div>
-                  <div className="space-y-2">
-                    {["Vehicle #001 - Downtown", "Vehicle #002 - Highway A1", "Vehicle #003 - Industrial"].map((v, i) => (
-                      <div key={i} className="flex items-center justify-between bg-white/10 backdrop-blur-md p-2 rounded-lg">
-                        <span className="text-white/70 text-xs font-light">{v}</span>
-                        <span className={`w-1.5 h-1.5 rounded-full ${i < 2 ? "bg-green-400" : "bg-white"}`} />
+
+                  <div className="space-y-3.5">
+                    <div className="bg-white/[0.08] backdrop-blur-md rounded-xl p-3.5 border border-white/[0.06]">
+                      <p className="text-[10px] text-white/40 font-bold uppercase tracking-wider mb-1.5">Fleet Status</p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-white text-lg font-black">12</span>
+                          <span className="text-white/40 text-xs font-light ml-1">Active</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                          <span className="text-[10px] text-emerald-400/70 font-light">Online</span>
+                        </div>
                       </div>
-                    ))}
+                    </div>
+
+                    <div className="relative h-28 rounded-xl bg-black/30 border border-white/[0.06] overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <TbRadar className="w-16 h-16 text-otrack-primary/10 animate-spin-slow" />
+                      </div>
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(246,140,42,0.06),transparent_60%)]" />
+                      {[
+                        { top: "25%", left: "30%", delay: "0s" },
+                        { top: "55%", left: "60%", delay: "0.8s" },
+                        { top: "40%", left: "45%", delay: "1.6s" },
+                      ].map((dot, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-1.5 h-1.5 rounded-full bg-otrack-primary"
+                          style={{ top: dot.top, left: dot.left }}
+                          animate={{ opacity: [0, 1, 0], scale: [0, 1.5, 0] }}
+                          transition={{ duration: 2.5, repeat: Infinity, delay: parseFloat(dot.delay) }}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="space-y-2">
+                      {[
+                        { name: "Vehicle #001 - Downtown", online: true },
+                        { name: "Vehicle #002 - Highway A1", online: true },
+                        { name: "Vehicle #003 - Industrial", online: false },
+                      ].map((v, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.6 + i * 0.1 }}
+                          className="flex items-center justify-between bg-white/[0.06] backdrop-blur-md p-2.5 rounded-lg border border-white/[0.04] hover:border-otrack-primary/20 transition-colors"
+                        >
+                          <div className="flex items-center gap-2">
+                            <FiMapPin className={`w-3 h-3 ${v.online ? "text-emerald-400" : "text-white/20"}`} />
+                            <span className={`text-[11px] ${v.online ? "text-white/70" : "text-white/30"} font-light`}>{v.name}</span>
+                          </div>
+                          <span className={`w-1.5 h-1.5 rounded-full ${v.online ? "bg-emerald-400" : "bg-white/20"}`} />
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -160,7 +260,7 @@ function FeaturesSection() {
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#F68C2A] to-[#FF6B00] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#F68C2A]/30 transition-all">
                 <f.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight mb-2">{f.title}</h3>
+              <h3 className="text-lg font-bold uppercase text-gray-900  tracking-tight mb-2">{f.title}</h3>
               <p className="text-sm text-gray-700 font-light">{f.desc}</p>
             </motion.div>
           ))}
@@ -186,7 +286,7 @@ function DownloadSection() {
                     <FaGooglePlay className="w-8 h-8 text-green-400" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white uppercase tracking-tight">Google Play Store</h3>
+                    <h3 className="text-2xl font-bold uppercase text-white  tracking-tight">Google Play Store</h3>
                     <p className="text-sm text-otrack-gray font-light">Download the official O'Track Global app</p>
                   </div>
                 </div>
@@ -228,7 +328,7 @@ function DownloadSection() {
                     <FaApple className="w-8 h-8 text-white/60" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white uppercase tracking-tight">iOS App Store</h3>
+                    <h3 className="text-2xl font-bold uppercase text-white  tracking-tight">iOS App Store</h3>
                     <p className="text-sm text-otrack-gray font-light">Coming soon to iPhone and iPad</p>
                   </div>
                 </div>
@@ -291,7 +391,7 @@ function ComingSoonSection() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F68C2A] to-[#FF6B00] flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight mb-2">{item.title}</h3>
+                <h3 className="text-lg font-bold uppercase text-gray-900  tracking-tight mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-700 font-light">{item.desc}</p>
               </motion.div>
             ))}
