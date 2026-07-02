@@ -76,13 +76,26 @@
       }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      @font-face {
+        font-family: Fixel;
+        src: url(/fonts/FixelVariable.woff2) format("woff2");
+        font-weight: 300 800;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Fixel;
+        src: url(/fonts/FixelVariableItalic.woff2) format("woff2");
+        font-weight: 300 800;
+        font-style: italic;
+        font-display: swap;
+      }
+    </style>
 
     <title>O'Track Global | Vehicle Tracking & Fleet Management Solutions Zimbabwe</title>
   </head>
-  <body class="bg-white antialiased font-montserrat">
+  <body class="bg-background text-foreground antialiased font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

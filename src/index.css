@@ -3,9 +3,44 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 345 6% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 345 6% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 6% 13%;
+    --primary: 30 92% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-50: 30 92% 97%;
+    --primary-100: 30 92% 95%;
+    --primary-200: 30 92% 90%;
+    --primary-300: 30 92% 85%;
+    --primary-400: 30 92% 80%;
+    --primary-500: 30 92% 75%;
+    --primary-600: 30 92% 69%;
+    --primary-700: 30 92% 64%;
+    --primary-800: 30 92% 59%;
+    --primary-900: 30 92% 56%;
+    --secondary: 25 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 30 92% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --constructive: 152 82% 39%;
+    --constructive-foreground: 145 81% 96%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 30 92% 56%;
+    --radius: 0.5rem;
+  }
+
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(246, 140, 42, 0.3) transparent;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
   }
 
   *::-webkit-scrollbar {
@@ -17,7 +52,7 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background: rgba(246, 140, 42, 0.3);
+    background: hsl(var(--primary) / 0.3);
     border-radius: 3px;
   }
 
@@ -39,8 +74,8 @@
   }
 
   .glass-card:hover {
-    border-color: rgba(246, 140, 42, 0.25);
-    box-shadow: 0 0 30px rgba(246, 140, 42, 0.08);
+    border-color: hsl(var(--primary) / 0.25);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.08);
   }
 
   .glass-card-light {
@@ -52,8 +87,8 @@
   }
 
   .glass-card-light:hover {
-    border-color: rgba(246, 140, 42, 0.2);
-    box-shadow: 0 4px 20px rgba(246, 140, 42, 0.08);
+    border-color: hsl(var(--primary) / 0.2);
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.08);
   }
 
   .tech-border {
@@ -68,7 +103,7 @@
     transform: translateX(-50%);
     width: 60%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #F68C2A, transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
   }
 
   .gradient-text {
@@ -80,13 +115,13 @@
 
   .glow-line {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(246, 140, 42, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.5), transparent);
   }
 
   .grid-pattern {
     background-image:
-      linear-gradient(rgba(246, 140, 42, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(246, 140, 42, 0.04) 1px, transparent 1px);
+      linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 }
